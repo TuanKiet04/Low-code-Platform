@@ -27,3 +27,10 @@ if len(st.session_state.nodes) >= 2:
     if st.button("Add Edge"):
         new_edge = {"source": source_node, "target": target_node}
         st.session_state.edges.append(new_edge)
+        
+import requests
+
+if st.button("Save Workflow"):
+    workflow = {"nodes": st.session_state.nodes, "edges": st.session_state.edges}
+    response = requests.post("http://localhost:8000/save-workflow", json=workflow)
+    st.write(f"Backend response: {response.json()}")
