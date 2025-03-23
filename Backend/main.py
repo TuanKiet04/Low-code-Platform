@@ -5,7 +5,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 # Kết nối MongoDB
-client = MongoClient("mongodb://localhost:27017")
+client = MongoClient("mongodb://admin:kiietqo9204@localhost:27017")
 db = client["chatbot_db"]
 workflows = db["workflows"]
 

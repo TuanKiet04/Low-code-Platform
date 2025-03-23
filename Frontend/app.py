@@ -28,6 +28,7 @@ if len(st.session_state.nodes) >= 2:
         new_edge = {"source": source_node, "target": target_node}
         st.session_state.edges.append(new_edge)
         
+#Gửi workflow đến Backend
 import requests
 
 if st.button("Save Workflow"):
